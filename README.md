@@ -4,6 +4,11 @@
 ---
 
 
+## Goal
+---
+![map](./image/map.png)
+- 차선을 벗어나지 않고 3바퀴 연속 주행
+
 ## Environment
 ---
 - Ubuntu 18.04
@@ -28,9 +33,6 @@ Project2
 ~~~bash
 $ roslaunch 
 ~~~
-
-## Goal
----
 
 ## Procedure
 ---
