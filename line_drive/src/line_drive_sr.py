@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import rospy, rospkg
@@ -8,7 +8,6 @@ from cv_bridge import CvBridge
 from xycar_msgs.msg import xycar_motor
 from sensor_msgs.msg import Image
 from darknet_ros_msgs.msg import BoundingBoxes
-from yolo_steering import YOLO
 
 import sys
 import os
@@ -266,12 +265,6 @@ def process_image(frame):
 
     return lpos, rpos
     
-def callback(self, msg):
-    global box_data
-    box_data = msg
-    yolo = YOLO()
-    yolo.image_detect(box_data)
-    
 def start():
     global pub
     global image
@@ -281,8 +274,7 @@ def start():
     rospy.init_node('auto_drive')
     pub = rospy.Publisher('xycar_motor', xycar_motor, queue_size=1)
     image_sub = rospy.Subscriber("/usb_cam/image_raw", Image, img_callback)
-    rospy.Subscriber('/darknet_ros/bounding_boxes', BoundingBoxes, callback)
-    print "---------- Xycar A2 v1.0 ----------"
+
     rospy.sleep(2)
 
     # speed 15 : 0.4, 0.0005, 0.25 -> stable
