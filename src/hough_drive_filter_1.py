@@ -12,6 +12,7 @@ import sys
 import os
 import signal
 import pid
+import movingAverage
 
 def signal_handler(sig, frame):
     os.system('killall -9 python rosout')
@@ -278,7 +279,7 @@ def start():
     print "---------- Xycar A2 v1.0 ----------"
     rospy.sleep(2)
 
-    while True:
+    while not rospy.is_shutdown():
         while not image.size == (640*480*3):
             continue
             
@@ -292,7 +293,7 @@ def start():
         
         #pid먼저하고 filter
         filtererror.add_sample(pid_angle)
-        #use_m = movingaverage.MovingAverage(10)
+        #use_m = movingAverage.MovingAverage(10)
         filter_angle = filtererror.get_mm()
 
 	#print(center, error, angle)
@@ -307,10 +308,5 @@ def start():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    rospy.spin()
-
 if __name__ == '__main__':
-
     start()
-
-
