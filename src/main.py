@@ -64,9 +64,6 @@ def init():
 
 def start():
     global imageProcessing
-    global movingAverage
-
-    global Width, Height    
 
     # speed 15 : 0.4, 0.0005, 0.25 -> stable
     # speed 25 : 0.3, 0.0, 0.3 -> almost stable
