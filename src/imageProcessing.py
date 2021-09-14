@@ -34,6 +34,9 @@ class ImageProcessing:
     def getWidth(self):
         return self.Width
 
+    def getHeight(self):
+        return self.Height
+
     def calibrate_image(self):     
         tf_image = cv2.undistort(self.image, self.mtx, self.dist, None, self.cal_mtx)
         x, y, w, h = self.cal_roi
@@ -195,6 +198,6 @@ class ImageProcessing:
         frame = self.draw_rectangle(frame, lpos, rpos, offset=self.Offset)
 
         # show image
-        cv2.imshow('calibration', frame)
+        cv2.imshow('final', frame)
 
         return lpos, rpos
