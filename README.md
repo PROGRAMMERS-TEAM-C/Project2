@@ -14,7 +14,7 @@
 ---
 - Ubuntu 18.04
 - ROS Melodic
-- Xycar 무슨 모델인지 까먹음 ㅎㅎ
+- Xycar Model D
 - Nvidia TX 2
 
 ## Structure
@@ -73,8 +73,9 @@ $ roslaunch Project2 main.launch
   - PID값을 조절하여 P = 0.25, I = 0.0005, D = 0.25 으로 설정했을 때 가장 안정적이었음.
 - 하지만 위 PID 값을 적용했을 때, 곡선에서 차선 이탈을 하는 문제가 있었음 
   - 곡선과 직선에서의 PID값을 따로 주어 해결 -> 곡선 P = 0.5, I = 0.0, D = 0.25 로 설정. 
+
 ## What I've learned
 ---
-- hough
-- PID
-- MovingAverageFilter
+- Image Processing의 다양한 Noise 해결 방법
+- hough transform을 사용한 lane detection
+- 상황에 맞게 PID와 MovingAverageFilter를 조절해서 부드러운 조향각 제어
