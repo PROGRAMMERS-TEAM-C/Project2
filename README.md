@@ -5,6 +5,15 @@
 
 [![차선인식 주행 영상](https://img.youtube.com/vi/BE9nrN8bJFQ/0.jpg)](https://youtu.be/BE9nrN8bJFQ) 
 
+## Member Roles
+
+| 이름         | 담당                                         |
+| ------------ | :------------------------------------------- |
+| 조영진(팀장) | 허프변환, PID, 이동평균 필터 적용 |
+| 구민상       | 허프변환, PID, 이동평균 필터 적용 |
+| 고세람       | 허프변환, PID값 최적화 |
+| 임경묵       | 허프변환, PID값 최적화 |
+
 ## Goal
 ---
 ![map](./image/map.png)
